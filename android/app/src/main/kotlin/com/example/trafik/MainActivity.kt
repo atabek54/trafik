@@ -1,4 +1,4 @@
-package com.example.trafik
+package com.yolikaz.trafik
 
 import io.flutter.embedding.android.FlutterActivity
 

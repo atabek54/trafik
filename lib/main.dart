@@ -1,8 +1,21 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:trafik/pages/login_page.dart';
+import 'package:trafik/pages/map_view.dart';
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
 
 void main() {
+  HttpOverrides.global = new MyHttpOverrides();
   runApp(const MyApp());
 }
 
@@ -34,7 +47,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.black)),
         backgroundColor: Colors.white,
       ),
-      home: LoginPage(),
+      home: GoogleMapScreen(),
     );
   }
 }

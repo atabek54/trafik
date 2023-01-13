@@ -28,7 +28,7 @@ String? _description;
 Future<void> addWarning() async {
   _isLoading = true;
   EasyLoading.show(status: 'loading...');
-print(UserInfo.user?[0].uuid);
+  print(UserInfo.user?[0].uuid);
   final data = {
     "operation_type": "insert",
     "service_type": "add_warning",
@@ -52,10 +52,19 @@ print(UserInfo.user?[0].uuid);
   }
 }
 
-Map<int, Widget> _children =  {
-  0: Text('Radar',style: GoogleFonts.quicksand(fontSize: 18,fontWeight: FontWeight.w700),),
-  1: Text('Çevirme',style: GoogleFonts.quicksand(fontSize:18,fontWeight: FontWeight.w700),),
-  2: Text('Kaza',style: GoogleFonts.quicksand(fontSize: 18,fontWeight: FontWeight.w700),),
+Map<int, Widget> _children = {
+  0: Text(
+    'Radar',
+    style: GoogleFonts.quicksand(fontSize: 18, fontWeight: FontWeight.w700),
+  ),
+  1: Text(
+    'Çevirme',
+    style: GoogleFonts.quicksand(fontSize: 18, fontWeight: FontWeight.w700),
+  ),
+  2: Text(
+    'Kaza',
+    style: GoogleFonts.quicksand(fontSize: 18, fontWeight: FontWeight.w700),
+  ),
 };
 int _currentSelection = 0;
 final myController = TextEditingController();
@@ -70,18 +79,26 @@ class _AddWarningModalWidgetState extends State<AddWarningModalWidget> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Uyarı Ekle', style: GoogleFonts.quicksand(fontSize: 30,),),
-_empty(80),
+            Text(
+              'Uyarı Ekle',
+              style: GoogleFonts.quicksand(
+                fontSize: 30,
+              ),
+            ),
+            _empty(10),
             Padding(
               padding: const EdgeInsets.all(18.0),
-              child: Text('Trafikte karşılaştığın olayları paylaşarak diğer sürücüleri önceden bilgilendir',style: 
-              GoogleFonts.quicksand(fontSize: 26,),),
+              child: Text(
+                'Trafikte karşılaştığın olayları paylaşarak diğer sürücüleri önceden bilgilendir',
+                style: GoogleFonts.quicksand(
+                  fontSize: 26,
+                ),
+              ),
             ),
             _empty(50),
             SizedBox(
               width: MediaQuery.of(context).size.width,
               child: MaterialSegmentedControl(
-                
                 children: _children,
                 selectionIndex: _currentSelection,
                 borderColor: Colors.grey,
@@ -126,9 +143,7 @@ _empty(80),
                         myController.clear();
                         print(_description);
                         await Future.delayed(
-                            const Duration(milliseconds: 1500), () => {
-                              
-                            });
+                            const Duration(milliseconds: 1500), () => {});
                         Navigator.pop(context);
                       }
                     : () {},

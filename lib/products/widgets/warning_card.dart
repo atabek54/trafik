@@ -26,7 +26,6 @@ class _WarningCardState extends State<WarningCard> {
       padding: const EdgeInsets.symmetric(vertical: 21.0),
       child: SingleChildScrollView(
         child: Container(
-         
           decoration: BoxDecoration(
               gradient: CustomColor.warningCardColor,
               borderRadius: BorderRadius.circular(22)),
@@ -45,7 +44,7 @@ class _WarningCardState extends State<WarningCard> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 28.0),
+                padding: const EdgeInsets.only(left: 14.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
