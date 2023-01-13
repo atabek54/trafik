@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:trafik/pages/splash.dart';
+import 'package:trafik/pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,14 +26,15 @@ class MyApp extends StatelessWidget {
           ),
         ),
         buttonColor: Colors.black,
-        buttonTheme: ButtonThemeData(
-          
-          buttonColor: Colors.black),
+        buttonTheme: ButtonThemeData(buttonColor: Colors.black),
         textTheme: const TextTheme(
-            headline1: TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold,color: Colors.black)),
+            headline1: TextStyle(
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.black)),
         backgroundColor: Colors.white,
       ),
-      home: const Splash(),
+      home: LoginPage(),
     );
   }
 }
